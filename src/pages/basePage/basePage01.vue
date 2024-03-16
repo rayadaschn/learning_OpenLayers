@@ -6,18 +6,14 @@
 import { onMounted } from "vue";
 import { Map, View } from "ol";
 import TileLayer from "ol/layer/Tile";
-import XYZ from "ol/source/XYZ";
-import { TD_TOKEN } from "@/const";
+import OSM from "ol/source/OSM";
 
 onMounted(() => {
   const map = new Map({
     target: "map", // 地图容器挂载 id
     layers: [
-      // 加载瓦片图层数据
       new TileLayer({
-        source: new XYZ({
-          url: `http://t0.tianditu.com/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk=${TD_TOKEN}`,
-        }),
+        source: new OSM(), // 地图瓦片数据源
       }),
     ],
     view: new View({
