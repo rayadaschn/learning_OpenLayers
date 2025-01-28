@@ -2,7 +2,7 @@
   <div class="layout-admin-wrapper">
     <div class="layout-container-vertical fixed">
       <!-- SubMenu -->
-      <LayoutSideBar />
+      <LayoutSideBar v-model:collapse="collapse" />
       <div class="layout-main" :class="{ 'is-collapse': collapse }">
         <div class="app-main-container">
           <!-- Main -->
