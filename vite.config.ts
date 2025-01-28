@@ -15,6 +15,13 @@ export default defineConfig(({ mode }) => {
         "@": sourceDir,
       },
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use "@/styles/variable.scss" as *;`,
+        },
+      },
+    },
     plugins: [vue()],
     server: {
       host: true,
